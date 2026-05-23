@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="&#25171;&#24037;&#20154;&#29983;&#23384;&#35745;&#31639;&#22120;&#65292;&#36755;&#20837;&#26376;&#34218;&#12289;&#25151;&#31199;&#12289;&#36890;&#21220;&#12289;&#21507;&#39277;&#12289;&#33457;&#21591;&#12289;&#23456;&#29289;&#21644;&#28216;&#25103;&#20805;&#20540;&#65292;&#35745;&#31639;&#26376;&#34218;&#29983;&#23384;&#22825;&#25968;&#12289;&#25151;&#31199;&#21387;&#21147;&#12289;&#30772;&#20135;&#27010;&#29575;&#21644;&#31351;&#39740;&#30011;&#20687;&#12290;"
+    />
+    <meta
+      name="keywords"
+      content="&#24037;&#36164;&#35745;&#31639;&#22120;,&#26376;&#34218;&#29983;&#23384;&#35745;&#31639;,&#25151;&#31199;&#21387;&#21147;,&#25171;&#24037;&#20154;&#29983;&#23384;,&#21271;&#28418;&#27818;&#28418;,&#27605;&#19994;&#29983;&#30465;&#38065;"
+    />
+    <title>&#25171;&#24037;&#20154;&#29983;&#23384;&#35745;&#31639;&#22120; - &#25151;&#31199;/&#24037;&#36164;&#29983;&#23384;&#35745;&#31639;&#22120;</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="calculator-page" id="calculatorPage">
+        <section class="hero" aria-label="&#25171;&#24037;&#20154;&#29983;&#23384;&#35745;&#31639;&#22120;">
+          <div class="status-bar" aria-hidden="true">
+            <span>9:41</span>
+            <div class="phone-icons">
+              <span class="signal"></span>
+              <span class="wifi"></span>
+              <span class="battery"></span>
+            </div>
+          </div>
+
+          <div class="hero-actions" aria-label="&#24037;&#20855;">
+            <button class="round-action" id="resetBtn" type="button" aria-label="&#37325;&#32622;">
+              <span>&#8635;</span>
+              <b>&#37325;&#32622;</b>
+            </button>
+            <button class="round-action" id="aboutBtn" type="button" aria-label="&#35828;&#26126;">
+              <span>i</span>
+              <b>&#35828;&#26126;</b>
+            </button>
+          </div>
+
+          <div class="hero-copy">
+            <p class="tag">&#24403;&#20195;&#24180;&#36731;&#20154;&#24517;&#22791;</p>
+            <h1>
+              <span>&#25171;&#24037;&#20154;&#29983;&#23384;</span>
+              <strong>&#35745;&#31639;&#22120;</strong>
+            </h1>
+            <p class="slogan">&#31639;&#28165;&#27599;&#19968;&#20998;&#38065;&#65292;&#27963;&#36807;&#36825;&#20010;&#26376;!</p>
+          </div>
+
+          <div class="cash-badge" aria-hidden="true">&#128184;</div>
+          <div class="scribble" aria-hidden="true"></div>
+          <div class="worker" aria-hidden="true">
+            <div class="speech">&#25105;&#22826;&#38590;&#20102;...</div>
+            <div class="hair"></div>
+            <div class="head">
+              <span class="eye left"></span>
+              <span class="eye right"></span>
+              <span class="mouth"></span>
+            </div>
+            <div class="blanket"></div>
+            <div class="arm"></div>
+            <div class="coffee">
+              <span>&#32493;&#21629;<br />&#21654;&#21857;</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel input-panel" aria-labelledby="inputTitle">
+          <div class="section-title">
+            <h2 id="inputTitle">&#36755;&#20837;&#20320;&#30340;&#27599;&#26376;&#25910;&#25903; <small>&#65288;&#20803;&#65289;</small></h2>
+            <span class="marker" aria-hidden="true">&#9998;</span>
+          </div>
+
+          <div class="income-card">
+            <label for="salary">&#26376;&#34218;&#65288;&#31246;&#21518;&#65289;</label>
+            <div class="salary-line">
+              <input id="salary" type="number" min="1000" max="50000" step="100" inputmode="numeric" />
+              <span>&#20803;</span>
+            </div>
+            <input id="salaryRange" class="range" type="range" min="1000" max="50000" step="100" />
+            <div class="range-labels">
+              <span>1000</span>
+              <span>50000+</span>
+            </div>
+          </div>
+
+          <div class="expense-grid" id="expenseGrid" aria-label="&#27599;&#26376;&#25903;&#20986;"></div>
+        </section>
+
+        <section class="survival-panel" aria-labelledby="survivalTitle">
+          <div class="survival-heading">
+            <h2 id="survivalTitle">&#20320;&#30340;&#26412;&#26376;&#29983;&#23384;&#29366;&#20917;</h2>
+            <span aria-hidden="true">&#12349;</span>
+          </div>
+          <div class="survival-grid">
+            <div class="leftover">
+              <p>&#20320;&#36824;&#21097;&#65288;&#20803;&#65289;</p>
+              <strong id="leftover">1500.00</strong>
+              <span id="leftoverText">&#21035;&#24908;&#65292;&#36824;&#33021;&#25745;&#20303;!</span>
+            </div>
+            <div class="dark-tile">
+              <p>&#36824;&#33021;&#27963;&#65288;&#22825;&#65289;</p>
+              <strong><span id="days">9</span><small>&#22825;</small></strong>
+              <span id="daysHint">&#22914;&#26524;&#19981;&#21507;&#19981;&#21917;</span>
+            </div>
+            <div class="dark-tile danger-tile">
+              <p>&#26412;&#26376;&#30772;&#20135;&#27010;&#29575;</p>
+              <strong><span id="risk">78</span><small>%</small></strong>
+              <div class="meter"><i id="riskBar"></i></div>
+              <span id="riskText">&#9888; &#38750;&#24120;&#21361;&#38505;</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-row">
+          <article class="panel milk-panel" aria-labelledby="milkTitle">
+            <div class="mini-title">
+              <h2 id="milkTitle">&#22902;&#33590;&#33258;&#30001;&#31561;&#32423;</h2>
+              <span>&#129380;</span>
+            </div>
+            <div class="milk-result">
+              <h3 id="milkLevel">&#36139;&#27665;&#31391;&#22902;&#33590;&#36873;&#25163;</h3>
+              <div class="stars" id="stars" aria-label="&#22902;&#33590;&#33258;&#30001;&#26143;&#32423;"></div>
+              <p id="milkCopy">&#27599;&#26479;&#22902;&#33590;&#37117;&#22312;&#36127;&#32618;&#24863;&#20013;&#21917;&#19979;&#21435;...</p>
+            </div>
+            <dl class="milk-data">
+              <div>
+                <dt>&#26412;&#26376;&#22902;&#33590;&#39044;&#31639;&#65306;</dt>
+                <dd id="teaBudget">50&#20803;</dd>
+              </div>
+              <div>
+                <dt>&#32422;&#31561;&#20110;&#22902;&#33590;&#65306;</dt>
+                <dd id="teaCups">1&#26479;</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="panel portrait-panel" aria-labelledby="portraitTitle">
+            <h2 id="portraitTitle">&#31351;&#39740;&#30011;&#20687;</h2>
+            <div class="portrait-body">
+              <div class="photo-card" aria-hidden="true">
+                <span class="clip">&#8984;</span>
+                <img class="portrait-avatar" id="portraitAvatar" alt="" hidden />
+                <div class="portrait-face">
+                  <div class="portrait-hair"></div>
+                  <div class="portrait-head">
+                    <span class="portrait-eye a"></span>
+                    <span class="portrait-eye b"></span>
+                  </div>
+                  <div class="hoodie">&#25171;&#24037;&#20154;</div>
+                  <div class="cup">&#26552;&#26462;</div>
+                </div>
+                <b># &#26376;&#20809;&#26063;&#26412;&#26063; #</b>
+              </div>
+              <dl class="profile">
+                <div><dt>&#22995;&#21517;&#65306;</dt><dd id="profileName">&#25171;&#24037;&#20154;&#23567;&#24352;</dd></div>
+                <div><dt>&#24180;&#40836;&#65306;</dt><dd id="profileAge">24</dd></div>
+                <div><dt>&#22478;&#24066;&#65306;</dt><dd id="profileCity">&#21271;&#28418;</dd></div>
+                <div><dt>&#32844;&#19994;&#65306;</dt><dd id="profileJob">&#20114;&#32852;&#32593;&#25644;&#30742;</dd></div>
+                <div><dt>&#26376;&#34218;&#65306;</dt><dd id="profileSalary">8000</dd></div>
+                <div class="faith">
+                  <dt>&#20154;&#29983;&#20449;&#26465;&#65306;</dt>
+                  <dd id="profileMotto">&#27963;&#30528;&#25402;&#22909;<br />&#20854;&#20182;&#37117;&#26159;&#38182;&#19978;&#28155;&#33457;</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </section>
+
+        <section class="tips-band" aria-labelledby="tipsTitle">
+          <div>
+            <h2 id="tipsTitle">&#29983;&#23384;&#23567;&#36148;&#22763; &#9734;</h2>
+            <ul id="tipsList"></ul>
+          </div>
+          <strong>&#25913;&#21464;&#20174;&#29616;&#22312;&#24320;&#22987;!<br />&#21152;&#27833;&#65292;&#25171;&#24037;&#20154;!</strong>
+        </section>
+      </div>
+
+      <section class="tab-page report-page" id="reportPage" aria-labelledby="reportTitle" hidden>
+        <div class="page-head">
+          <h2 id="reportTitle">&#29983;&#23384;&#25253;&#21578;</h2>
+          <span id="reportBadge">&#26412;&#26376;&#29366;&#24577;&#65306;&#21193;&#24378;&#23433;&#20840;</span>
+        </div>
+        <div class="report-grid">
+          <article class="report-card">
+            <span>&#128176;</span>
+            <p>&#27599;&#26085;&#21487;&#29992;</p>
+            <strong id="dailySpend">50&#20803;</strong>
+          </article>
+          <article class="report-card">
+            <span>&#127968;</span>
+            <p>&#25151;&#31199;&#21387;&#21147;</p>
+            <strong id="rentRatio">38%</strong>
+          </article>
+          <article class="report-card">
+            <span>&#128200;</span>
+            <p>&#25903;&#20986;&#21344;&#27604;</p>
+            <strong id="expenseRatio">81%</strong>
+          </article>
+        </div>
+        <div class="report-strip">
+          <h3>&#25171;&#24037;&#20154;&#26412;&#26376;&#35780;&#35821;</h3>
+          <p id="reportCopy">&#38065;&#21253;&#36824;&#26377;&#19968;&#28857;&#21628;&#21560;&#24863;&#65292;&#20294;&#22806;&#21334;&#21644;&#20805;&#20540;&#24471;&#25910;&#19968;&#25910;&#12290;</p>
+        </div>
+        <div class="keyword-panel">
+          <h3>&#28909;&#38376;&#29983;&#23384;&#38382;&#39064;</h3>
+          <div class="keyword-lines">
+            <p><a href="./gongzi-bugouyong.html">&#24037;&#36164;&#20026;&#20160;&#20040;&#19981;&#22815;&#29992;</a></p>
+            <p><a href="./gongzi-qunale.html">&#24037;&#36164;&#21435;&#21738;&#20102;</a></p>
+            <p><a href="./yuexin-duoshao-bujiaolv.html">&#26376;&#34218;&#22810;&#23569;&#19981;&#28966;&#34385;</a></p>
+            <p><a href="./gongzi-gangfa-jiumeile.html">&#24037;&#36164;&#21018;&#21457;&#23601;&#27809;&#20102;</a></p>
+            <p><a href="./nianqingren-zhenshi-xiaofei.html">&#24180;&#36731;&#20154;&#30495;&#23454;&#28040;&#36153;</a></p>
+            <p><a href="./yueguangzu-jisuanqi.html">&#26376;&#20809;&#26063;&#35745;&#31639;&#22120;</a></p>
+            <p><a href="./qionggui-ceshi.html">&#31351;&#39740;&#27979;&#35797;</a></p>
+            <p><a href="./gongzi-gangfawan-weishenme-meile.html">&#24037;&#36164;&#21018;&#21457;&#23436;&#20026;&#20160;&#20040;&#23601;&#27809;&#20102;&#65311;</a></p>
+            <p><a href="./yuexin-yiwan-weishenme-jiaolv.html">&#26376;&#34218;&#19968;&#19975;&#20026;&#20160;&#20040;&#36824;&#26159;&#28966;&#34385;&#65311;</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-page guide-page" id="guidePage" aria-labelledby="guideTitle" hidden>
+        <div class="page-head">
+          <h2 id="guideTitle">&#30465;&#38065;&#25915;&#30053;</h2>
+          <span>&#21487;&#31435;&#21051;&#25191;&#34892;</span>
+        </div>
+        <div class="guide-list">
+          <article>
+            <b>01</b>
+            <h3>&#25151;&#31199;&#32418;&#32447;</h3>
+            <p>&#25151;&#31199;&#23613;&#37327;&#25511;&#21046;&#22312;&#26376;&#34218;&#30340; 30% &#24038;&#21491;&#65292;&#36229;&#36807; 40% &#23601;&#35201;&#29992;&#36890;&#21220;&#21644;&#21507;&#39277;&#26469;&#34917;&#12290;</p>
+          </article>
+          <article>
+            <b>02</b>
+            <h3>&#22806;&#21334;&#23553;&#39030;</h3>
+            <p>&#25226;&#21507;&#39277;&#39044;&#31639;&#25353;&#21608;&#20998;&#25104; 4 &#20221;&#65292;&#27599;&#21608;&#29992;&#23436;&#23601;&#21035;&#39069;&#22806;&#20511;&#19979;&#21608;&#30340;&#38065;&#12290;</p>
+          </article>
+          <article>
+            <b>03</b>
+            <h3>&#24555;&#20048;&#39044;&#31639;</h3>
+            <p>&#28216;&#25103;&#12289;&#22902;&#33590;&#12289;&#23456;&#29289;&#37117;&#21487;&#20197;&#30041;&#19968;&#31508;&#65292;&#20294;&#35201;&#20808;&#35774;&#19978;&#38480;&#65292;&#19981;&#35201;&#35753;&#23427;&#20204;&#21464;&#25104;&#38544;&#24418;&#25151;&#31199;&#12290;</p>
+          </article>
+        </div>
+        <div class="keyword-panel guide-keywords">
+          <h3>&#25171;&#24037;&#20154;&#25628;&#32034;&#25351;&#21335;</h3>
+          <div class="keyword-lines">
+            <p><a href="./yuexin-5000-zenmehuo.html">&#26376;&#34218;5000&#24590;&#20040;&#27963;</a></p>
+            <p><a href="./yuexin-8000-zhenshi-shenghuo.html">&#26376;&#34218;8000&#30495;&#23454;&#29983;&#27963;</a></p>
+            <p><a href="./yuexin-1wan-gouhuama.html">&#26376;&#34218;1&#19975;&#22815;&#33457;&#21527;</a></p>
+            <p><a href="./yuexin-duoshao-goushenghuo.html">&#26376;&#34218;&#22810;&#23569;&#25165;&#22815;&#29983;&#27963;</a></p>
+            <p><a href="./dagongren-shengcun-zhinan.html">&#25171;&#24037;&#20154;&#29983;&#23384;&#25351;&#21335;</a></p>
+            <p><a href="./dagongren-yigeyue-kaixiao.html">&#25171;&#24037;&#20154;&#19968;&#20010;&#26376;&#24320;&#38144;</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-page mine-page" id="minePage" aria-labelledby="mineTitle" hidden>
+        <div class="mine-card">
+          <label class="mine-avatar" for="avatarInput">
+            <img id="mineAvatarImage" alt="" hidden />
+            <span id="mineAvatarFallback">&#25171;</span>
+          </label>
+          <div>
+            <h2 id="mineTitle">&#25171;&#24037;&#20154;&#23567;&#24352;</h2>
+            <p id="mineSubtitle">&#28857;&#20987;&#22836;&#20687;&#19978;&#20256;&#29031;&#29255;&#65292;&#19979;&#26041;&#21487;&#32534;&#36753;&#30011;&#20687;&#36164;&#26009;&#12290;</p>
+          </div>
+        </div>
+        <input id="avatarInput" class="visually-hidden" type="file" accept="image/*" />
+        <div class="mine-stats">
+          <div><span>&#26376;&#34218;</span><strong id="mineSalary">8000</strong></div>
+          <div><span>&#32467;&#20313;</span><strong id="mineLeftover">1500</strong></div>
+          <div><span>&#39118;&#38505;</span><strong id="mineRisk">68%</strong></div>
+        </div>
+        <form class="profile-form" id="profileForm">
+          <label>
+            <span>&#22995;&#21517;</span>
+            <input id="editName" type="text" maxlength="12" />
+          </label>
+          <label>
+            <span>&#24180;&#40836;</span>
+            <input id="editAge" type="number" min="16" max="80" inputmode="numeric" />
+          </label>
+          <label>
+            <span>&#22478;&#24066;</span>
+            <input id="editCity" type="text" maxlength="12" />
+          </label>
+          <label>
+            <span>&#32844;&#19994;</span>
+            <input id="editJob" type="text" maxlength="16" />
+          </label>
+          <label class="wide">
+            <span>&#20154;&#29983;&#20449;&#26465;</span>
+            <textarea id="editMotto" maxlength="28" rows="2"></textarea>
+          </label>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="&#24213;&#37096;&#23548;&#33322;">
+      <button class="active" type="button" data-tab="calculator" aria-label="&#35745;&#31639;&#22120;">
+        <span>&#9635;</span>
+        &#35745;&#31639;&#22120;
+      </button>
+      <button type="button" data-tab="report" aria-label="&#29983;&#23384;&#25253;&#21578;">
+        <span>&#9684;</span>
+        &#29983;&#23384;&#25253;&#21578;
+      </button>
+      <button type="button" data-tab="guide" aria-label="&#30465;&#38065;&#25915;&#30053;">
+        <span>&#9649;</span>
+        &#30465;&#38065;&#25915;&#30053;
+      </button>
+      <button type="button" data-tab="mine" aria-label="&#25105;&#30340;">
+        <span>&#9817;</span>
+        &#25105;&#30340;
+      </button>
+    </nav>
+
+    <dialog id="aboutDialog">
+      <form method="dialog">
+        <h2>&#35828;&#26126;</h2>
+        <p>&#25152;&#26377;&#25968;&#25454;&#21482;&#20445;&#23384;&#22312;&#24403;&#21069;&#27983;&#35272;&#22120;&#30340; localStorage&#65292;&#19981;&#20250;&#19978;&#20256;&#12290;&#35843;&#25972;&#26376;&#34218;&#25110;&#25903;&#20986;&#21518;&#65292;&#32467;&#26524;&#20250;&#33258;&#21160;&#26356;&#26032;&#12290;</p>
+        <button type="submit">&#30693;&#36947;&#20102;</button>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
